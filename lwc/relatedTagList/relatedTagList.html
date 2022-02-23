@@ -1,0 +1,44 @@
+<template>
+  <div class="container slds-box">
+    <header class="slds-media slds-media--center slds-has-flexi-truncate">
+      <div class="slds-media__body">
+        <h2 class="header-title-container">
+          <span
+            class="slds-card__header-title slds-truncate"
+            title="Recent Items (1)"
+            >Tagged Records</span
+          >
+          <template if:true={tagLabel}>
+            <span class="slds-m-left_small slds-text-body_small">
+              <lightning-pill
+                variant="plain"
+                name={tagLabel}
+                label={tagLabel}
+                onremove={handleClear}
+              >
+              </lightning-pill
+            ></span>
+          </template>
+        </h2>
+      </div>
+    </header>
+
+    <template for:each={related} for:item="relatedItem">
+      <div key={relatedItem.Id} class="card">
+        <lightning-card
+          data-record-id={relatedItem.Id}
+          onclick={handleCardClick}
+        >
+          <div slot="title">
+            <lightning-icon
+              class="icon"
+              icon-name={relatedItem.icon}
+              size="small"
+            ></lightning-icon>
+            {relatedItem.Name}
+          </div>
+        </lightning-card>
+      </div>
+    </template>
+  </div>
+</template>

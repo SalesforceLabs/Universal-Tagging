@@ -1,0 +1,18 @@
+.container {
+  max-height: 40vh;
+  overflow: auto;
+  background-color: white;
+}
+
+.record {
+	margin-bottom: 0.5rem;
+	background-color: white;
+}
+
+.icon {
+	margin-right: 0.5rem;
+}
+.card {
+  cursor: pointer;
+  margin-top: .5rem
+}

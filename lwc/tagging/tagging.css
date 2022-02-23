@@ -1,0 +1,19 @@
+.container {
+	background-color: white;
+}
+
+.pill-container {
+	margin-top: 0.5rem;
+}
+
+.current-tags {
+	margin-top: 1.5rem;
+}
+
+.pill {
+	cursor: pointer;
+}
+
+.fade-pill {
+	opacity: 0.1;
+}

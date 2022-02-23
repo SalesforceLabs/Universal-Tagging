@@ -1,0 +1,35 @@
+<template>
+	<div class="slds-box container">
+    <lightning-input label="Add Tag" 
+      field-level-help="Type a tag and click a result to apply it to the record. If there is only one result, hit 'Enter' to apply the tag. If there are no results, hitting 'Enter' will create and apply a new tag."
+      placeholder="Search or create tag" 
+      onchange={handleInputChange} 
+      value={queryValue}>
+    </lightning-input>
+    <div  class="pill-container" >
+        <template for:each={tags} for:item="tag">
+          <lightning-pill 
+            variant="plain"
+            class="pill no-close" 
+            key={tag.name} 
+            name={tag.name} 
+            label={tag.label} 
+            onclick={handlePillQueryClick}>
+          </lightning-pill>
+        </template>
+    </div>
+    <div  class="pill-container" >
+        <template for:each={currentTags} for:item="tag">
+          <lightning-pill 
+            variant="plain"
+            class="pill" 
+            key={tag.name} 
+            name={tag.name} 
+            label={tag.label} 
+            onremove={handleRemoveTag}
+            onclick={handleCurrentTagClick}>
+          </lightning-pill>
+        </template>
+    </div>
+  </div>
+</template>

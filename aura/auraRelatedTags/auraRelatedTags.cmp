@@ -1,0 +1,6 @@
+<aura:component
+	implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName,forceCommunity:availableForAllPageTypes"
+	access="global"
+>
+	<c:relatedTagList recordId="{!v.recordId}"/>
+</aura:component>
